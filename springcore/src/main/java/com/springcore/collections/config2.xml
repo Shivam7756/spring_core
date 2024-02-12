@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xmlns:oxm="http://www.springframework.org/schema/oxm"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+            http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.1.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+            
+            <!-- This is our beans-->
+            
+          <bean class="com.springcore.collections.Emp" name="emp1"> <!-- here , the class name is Emp-->
+          <property name="empName">
+          <value>utkarsh kumar</value>
+          </property>
+           
+          <property name="phoneNo">
+             <list><!-- to access list use the list tags or elements-->
+              <value>7456425</value>
+              <value>46548</value>
+              <value>4548497</value>
+              <null/>
+             </list>
+          </property>
+          
+          <property name="address">
+           <set><!-- used for inserting into set-->
+           <value>delhi</value>
+           <value>ghaziabad</value>
+           <value>noida</value>
+           </set>
+          </property>
+          
+          <property name="courses">
+          <map><!-- In map self closing entry tag , which has key and value mapped with the given key-->
+          <entry key="java" value="2months"/>
+          <entry key="c"    value="1months"/>
+          <entry key="c++" value="15days"/>
+          </map>
+          </property>
+          <property name="props">
+          <props>
+          <prop key="Designation">UPSC</prop>
+          </props>
+          </property>
+          </bean>  
+          
+          <bean name="emp2" class="com.springcore.collections.Emp" p:empName="mukesh kumar">
+          <property name="phoneNo">
+          <list>
+          <value>4589</value>
+          <value>45896</value>
+          <value>455654</value>
+          </list>
+          </property>
+          
+          <property name="address">
+          <set>
+          <value>bangalore</value>
+          <value>hyderabad</value>
+          <value>chennai</value>
+          </set>
+          </property>
+          
+          <property name="courses">
+          <map>
+          <entry key="computer application" value = "2 weeks"/>
+          <entry key="operating systems" value = "1 semester"/>
+          <entry key="shell programming" value = "1 semester"/>
+          </map>
+          </property>
+          <property name="props">
+          <props>
+          <prop key="Designation">Civil servant</prop>
+          </props>
+          </property>
+          </bean>
+          
+          <bean name="emp3" class = "com.springcore.collections.Emp" p:empName="Shreedhar kushwaha">
+          <property name="phoneNo">
+          <list>
+          <value>454545</value>
+          <value>121212</value>
+          <null/>
+          </list>
+          </property>
+          
+          <property name="address">
+          <set>
+          <value>siwan</value>
+          <value>gopalganj</value>
+          </set>
+          </property>
+          
+          <property name="courses">
+          <map>
+          <entry key="Bsc" value="3 years"/>
+          <entry key="B.tech" value="4 years"/>
+          </map>
+          </property>
+          <property name="props">
+          <props>
+          <prop key="Designation">Software Engineer</prop>
+          </props>
+          
+          </property>
+          </bean>
+            
+</beans>
